@@ -4,6 +4,7 @@ import com.github.javafaker.Faker;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
+import models.Board;
 import models.Organization;
 import org.junit.jupiter.api.BeforeAll;
 
@@ -11,6 +12,9 @@ public class BaseTest {
 
     protected static final String BASE_URL = "https://api.trello.com/1/";
     protected static final String ORGANIZATION = "organizations/";
+    protected static final String CARDS = "cards/";
+    protected static final String LISTS = "lists/";
+    protected static final String BOARDS = "boards/";
 
     protected static final String KEY = "69f4863785d85042c966803ae8c46d3e";
     protected static final String TOKEN = "bdefc2ba052f1061b37c83473873039c9615d6f2c69c014d9ec62a76a302a498";
@@ -20,6 +24,7 @@ public class BaseTest {
 
     public static Faker faker;
     public static Organization organization;
+    public static Board board;
 
 
     @BeforeAll
@@ -30,7 +35,6 @@ public class BaseTest {
         reqBuilder.setContentType(ContentType.JSON);
         reqSpec = reqBuilder.build();
 
-        organization = new Organization();
         faker = new Faker();
     }
 }

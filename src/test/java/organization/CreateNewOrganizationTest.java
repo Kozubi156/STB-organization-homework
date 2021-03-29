@@ -3,6 +3,7 @@ package organization;
 import base.BaseTest;
 import io.restassured.path.json.JsonPath;
 import io.restassured.response.Response;
+import models.Organization;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
@@ -15,6 +16,8 @@ public class CreateNewOrganizationTest extends BaseTest {
 
     @BeforeEach
     public void beforeEach() {
+        organization = new Organization();
+
         organization.setDisplayName(faker.lorem().word());
         organization.setDescription(faker.lorem().paragraph());
         organization.setName(faker.lorem().characters(4, 10, false, false));
@@ -62,7 +65,6 @@ public class CreateNewOrganizationTest extends BaseTest {
         JsonPath json = response.jsonPath();
         assertThat(json.getString("error")).isEqualTo(Utils.ERROR);
         assertThat(json.getString("message")).isEqualTo(Utils.ERROR_MESSAGE_DISPLAY_NAME);
-//        assertThat(json).doesNotHaveJsonPathValue("")
     }
 
     @Test
