@@ -1,6 +1,7 @@
 package base;
 
 import com.github.javafaker.Faker;
+import config.Configuration;
 import io.restassured.builder.RequestSpecBuilder;
 import io.restassured.http.ContentType;
 import io.restassured.specification.RequestSpecification;
@@ -16,8 +17,8 @@ public class BaseTest {
     protected static final String LISTS = "lists/";
     protected static final String BOARDS = "boards/";
 
-    protected static final String KEY = "69f4863785d85042c966803ae8c46d3e";
-    protected static final String TOKEN = "bdefc2ba052f1061b37c83473873039c9615d6f2c69c014d9ec62a76a302a498";
+    protected static final String KEY = Configuration.KEY_CONFIG_FILE;
+    protected static final String TOKEN = Configuration.TOKEN_CONFIG_FILE;
 
     protected static RequestSpecBuilder reqBuilder;
     protected static RequestSpecification reqSpec;

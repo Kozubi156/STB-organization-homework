@@ -78,3 +78,6 @@ fabric.properties
 
 #Targer
 /target/
+
+#Config
+/config/
