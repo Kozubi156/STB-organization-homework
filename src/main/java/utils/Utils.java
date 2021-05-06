@@ -8,4 +8,6 @@ public class Utils {
     public static final String DEFAULT_LIST_NAME_1 = "Do zrobienia";
     public static final String DEFAULT_LIST_NAME_2 = "W trakcie";
     public static final String DEFAULT_LIST_NAME_3 = "Zrobione";
+
+
 }

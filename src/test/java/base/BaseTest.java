@@ -8,6 +8,7 @@ import io.restassured.specification.RequestSpecification;
 import models.Board;
 import models.Organization;
 import org.junit.jupiter.api.BeforeAll;
+import utils.DeleteOrganization;
 
 public class BaseTest {
 
@@ -20,12 +21,14 @@ public class BaseTest {
     protected static final String KEY = Configuration.KEY_CONFIG_FILE;
     protected static final String TOKEN = Configuration.TOKEN_CONFIG_FILE;
 
+
     protected static RequestSpecBuilder reqBuilder;
     protected static RequestSpecification reqSpec;
 
     public static Faker faker;
     public static Organization organization;
     public static Board board;
+    public DeleteOrganization deleteOrganization;
 
 
     @BeforeAll
@@ -38,4 +41,14 @@ public class BaseTest {
 
         faker = new Faker();
     }
+//
+//    public void deleteOrganization(RequestSpecification reqSpec, String BASE_URL, String ORGANIZATION, String organizationId){
+//        given()
+//                .contentType(ContentType.JSON)
+//                .spec(reqSpec)
+//                .when()
+//                .delete(BASE_URL + ORGANIZATION + organizationId)
+//                .then()
+//                .statusCode(HttpStatus.SC_OK);
+//    }
 }
