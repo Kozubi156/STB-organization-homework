@@ -7,7 +7,7 @@ import models.Board;
 import org.apache.http.HttpStatus;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
-import utils.Utils;
+import utils.Names;
 
 import java.util.List;
 
@@ -133,8 +133,8 @@ public class BoardTestE2E extends BaseTest {
         JsonPath jsonGet = responseGet.jsonPath();
         List<String> nameList = jsonGet.getList("name");
 
-        assertThat(nameList).hasSize(3).contains(Utils.DEFAULT_LIST_NAME_1, Utils.DEFAULT_LIST_NAME_2,
-                Utils.DEFAULT_LIST_NAME_3);
+        assertThat(nameList).hasSize(3).contains(Names.DEFAULT_LIST_NAME_1, Names.DEFAULT_LIST_NAME_2,
+                Names.DEFAULT_LIST_NAME_3);
 
         given()
                 .spec(reqSpec)

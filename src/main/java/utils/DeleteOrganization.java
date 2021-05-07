@@ -8,7 +8,8 @@ import static io.restassured.RestAssured.given;
 
 public class DeleteOrganization {
 
-    public void deleteOrganization(RequestSpecification reqSpec, String BASE_URL, String ORGANIZATION, String organizationId){
+    public static void deleteOrganization(RequestSpecification reqSpec, String BASE_URL, String ORGANIZATION,
+                                    String organizationId){
 
         given()
                 .contentType(ContentType.JSON)

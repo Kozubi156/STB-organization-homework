@@ -28,7 +28,7 @@ public class BaseTest {
     public static Faker faker;
     public static Organization organization;
     public static Board board;
-    public DeleteOrganization deleteOrganization;
+    protected DeleteOrganization deleteOrganization;
 
 
     @BeforeAll
@@ -41,14 +41,5 @@ public class BaseTest {
 
         faker = new Faker();
     }
-//
-//    public void deleteOrganization(RequestSpecification reqSpec, String BASE_URL, String ORGANIZATION, String organizationId){
-//        given()
-//                .contentType(ContentType.JSON)
-//                .spec(reqSpec)
-//                .when()
-//                .delete(BASE_URL + ORGANIZATION + organizationId)
-//                .then()
-//                .statusCode(HttpStatus.SC_OK);
-//    }
+
 }
